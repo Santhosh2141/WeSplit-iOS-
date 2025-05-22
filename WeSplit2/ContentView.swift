@@ -8,16 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    // in structs we can use mutating func to update property. but for var in swiftUI we use @State
+    @State private var tabCount = 0
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("hi, world!")
+        NavigationStack{
+            Button(
+            "Tab Count \(tabCount)"
+            ){
+                tabCount += 1
+            }
+            .navigationTitle("SwiftUI")
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .padding()
     }
 }
+// section{} groups it into sections
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
