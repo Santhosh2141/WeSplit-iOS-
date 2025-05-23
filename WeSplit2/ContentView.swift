@@ -64,6 +64,15 @@ struct ContentView: View {
                         }
                         .pickerStyle(.segmented)
                 }
+                // THIS IS FOR THE CHALLENEGE PART
+                Section("How much have you tipped: "){
+                    Picker("Tip Percent: ", selection: $tipPercent) {
+                        ForEach(0..<101){
+                            Text("\($0) %")
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
+            }
                 Section("Total Bill: "){
                     Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "INR"))
                 }
