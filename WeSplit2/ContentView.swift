@@ -75,10 +75,12 @@ struct ContentView: View {
             }
                 Section("Total Bill: "){
                     Text(totalAmount, format: .currency(code: Locale.current.currency?.identifier ?? "INR"))
+                        .foregroundColor(tipPercent == 0 ? .red : .primary)
                 }
                 Section("Amount payable per person"){
 //                    var value = totalDivided(checkAmount: checkAmount, numOfPpl: numOfPpl, tipPercent: tipPercent)
                     Text(amtPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "INR"))
+                        .foregroundColor(tipPercent == 0 ? .red : .primary)
                 }
             }
             .navigationTitle("We Split")
